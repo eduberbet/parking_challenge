@@ -3,11 +3,6 @@ body {
     font: normal 15pt Arial;
 }
 
-header {
-    color: white;
-    text-align: center;
-}
-
 section {
     background: white;
     border-radius: 10px;
