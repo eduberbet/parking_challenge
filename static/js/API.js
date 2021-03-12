@@ -140,7 +140,7 @@ function HISTORICO() {
         id.focus()
         historico.innerHTML = ``
         historico.innerHTML = `<p> </p>`
-        historico.innerHTML += `Placa ${placa}`
+        historico.innerHTML += `Placa: ${placa}`
         historico.innerHTML += `<p> </p>`
         for (var pos in veiculo) {
             if (veiculo[pos] == placa) {
@@ -153,13 +153,14 @@ function HISTORICO() {
                 let horas = Math.floor(periodo / 60)
                 let minut = periodo % 60
                 let periodo_estacionado = horas + "h" + minut + "min"
-                historico.innerHTML += `<p>Tempo Atual: <br> ${periodo_estacionado}</p>`
+                historico.innerHTML += `<p>Tempo Atual: ${periodo_estacionado}</p>`
             }
         }
         for (var pos in His_veiculo) {
             if (His_veiculo[pos] == placa) {
-                historico.innerHTML += `<p>${His_day[pos]} - Tempo Total: ${His_time[pos]}</p>`
+                historico.innerHTML += `<p>Dia/Mês: ${His_day[pos]} - Tempo Total: ${His_time[pos]}</p>`
             }
         }
+        historico.innerHTML += `FIM DO HISTÓRICO`
     }
 }

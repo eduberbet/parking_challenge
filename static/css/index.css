@@ -1,19 +1,90 @@
+header {
+    background: #4dd0e1;
+    width: 400px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
 body {
-    background: green;
+    background: whitesmoke;
     font: normal 15pt Arial;
 }
 
 section {
     background: white;
-    border-radius: 10px;
-    padding: 15px;
-    width: 500px;
-    margin: auto;
+    padding: 10px;
+    width: 400px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: auto;
 }
 
-footer {
-    color: white;
+nav {
     text-align: center;
-    font-style: italic;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #4dd0e1;
+    background: whitesmoke;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+div#app {
+    font: normal 12pt Arial;
+    text-align: center;
+    align-items: center;
+}
+
+p {
+    font: normal 13pt Arial;
+}
+
+p#Paragrafo {
+    text-align: left;
+    color: grey;
+    padding-left: 30px;
+}
+
+.entrada,
+.pagamento,
+.saida,
+.historico {
+    font: bold 12pt Arial;
+    color: white;
+    border: none;
+    width: 250px;
+    height: 60px;
+    border-radius: 3px;
+}
+
+.entrada {
+    background: #35e4bd;
+}
+
+.pagamento {
+    background: #a769b2
+}
+
+.saida {
+    background: white;
+    color: #a769b2;
+    border: solid 2px #a769b2;
+}
+
+.historico {
+    background: #f1b147
+}
+
+.eplaca,
+.splaca,
+.hplaca {
+    width: 248px;
+    height: 58px;
+    font-size: 30px;
+    text-align: center;
+    background: whitesmoke;
+    border: solid 1px gray;
+    border-radius: 3px;
 }
