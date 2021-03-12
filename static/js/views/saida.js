@@ -12,7 +12,7 @@ export default class extends AbstractView {
             <input type="text" name="splaca" id="splaca">
             <br><input type="button" value="PAGAMENTO" onclick="PAGAMENTO()">         
             <br><input type="button" value="SAÍDA" onclick="SAIDA()">
-            <br><a href="/historico" class="nav__link" data-link>VER HISTÓRICO</a>
+            <br><br><a href="/historico" class="nav__link" data-link>VER HISTÓRICO</a>
         `;
     }
 }

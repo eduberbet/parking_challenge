@@ -5,6 +5,7 @@ let minutos = []
 let pagamento = []
 let His_veiculo = []
 let His_time = []
+let His_day = []
 
 function ENTRADA() {
     let id = document.querySelector("input#eplaca")
@@ -55,6 +56,7 @@ function PAGAMENTO() {
         let id_veiculo = veiculo.indexOf(placa)
         if (pagamento[id_veiculo] == false) {
             let data = new Date()
+            let day = data.getDay() + "/" + data.getMonth()
             let hora = data.getHours()
             let min = data.getMinutes()
             let saida = Number(hora) * 60 + Number(min)
@@ -69,6 +71,7 @@ function PAGAMENTO() {
             } else {
                 His_veiculo.push(placa)
                 His_time.push(periodo_estacionado)
+                His_day.push(day)
                 pagamento[id_veiculo] = true
                 window.alert("PAGAMENTO CONFIRMADO!")
                 id.value = ''
@@ -112,6 +115,50 @@ function SAIDA() {
                 window.alert("SAIDA LIBERADA!")
                 id.value = ''
                 id.focus()
+            }
+        }
+    }
+}
+
+function HISTORICO() {
+    let id = document.querySelector("input#hplaca")
+    let temp = id.value
+    let placa = temp.toUpperCase()
+    let historico = document.getElementById("his")
+    historico.innerHTML = `<p>${His_veiculo}</p>`
+
+    if (placa.length > 8 || placa.length < 7) {
+        window.alert("[ERRO] Padrão de placa inválido!")
+        id.value = ''
+        id.focus()
+    } else if (His_veiculo.indexOf(placa) == -1 || veiculo.indexOf(placa) == -1) {
+        window.alert("[ERRO] Veiculo não encontrado!")
+        id.value = ''
+        id.focus()
+    } else {
+        id.value = ''
+        id.focus()
+        historico.innerHTML = ``
+        historico.innerHTML = `<p> </p>`
+        historico.innerHTML += `Placa ${placa}`
+        historico.innerHTML += `<p> </p>`
+        for (var pos in veiculo) {
+            if (veiculo[pos] == placa) {
+                let id_veiculo = veiculo.indexOf(placa)
+                let data = new Date()
+                let hora = data.getHours()
+                let min = data.getMinutes()
+                let now = Number(hora) * 60 + Number(min)
+                let periodo = now - minutos[id_veiculo]
+                let horas = Math.floor(periodo / 60)
+                let minut = periodo % 60
+                let periodo_estacionado = horas + "h" + minut + "min"
+                historico.innerHTML += `<p>Tempo Atual: <br> ${periodo_estacionado}</p>`
+            }
+        }
+        for (var pos in His_veiculo) {
+            if (His_veiculo[pos] == placa) {
+                historico.innerHTML += `<p>${His_day[pos]} - Tempo Total: ${His_time[pos]}</p>`
             }
         }
     }
