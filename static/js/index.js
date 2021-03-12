@@ -1,5 +1,4 @@
 import Entrada from "./views/entrada.js"
-import Pagamento from "./views/pagamento.js"
 import Saida from "./views/saida.js"
 import Historico from "./views/historico.js"
 
@@ -11,7 +10,6 @@ const navigateTo = url => {
 const router = async() => {
     const routes = [
         { path: "/", view: Entrada },
-        { path: "/pagamento", view: Pagamento },
         { path: "/saida", view: Saida },
         { path: "/historico", view: Historico },
     ];

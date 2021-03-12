@@ -8,7 +8,9 @@ export default class extends AbstractView {
 
     async getHtml() {
         return `       
-            <p>Esta é a pagina de entrada!</p>    
+            <p>Número da placa: </p>
+            <input type="text" name="eplaca" id="eplaca">
+            <br><input type="button" value="CONFIRMAR ENTRADA" onclick="ENTRADA()">   
         `;
     }
 }
